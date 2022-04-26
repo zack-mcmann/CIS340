@@ -1,19 +1,29 @@
-import React, {Component} from 'react';
-import { Text, View, Image } from 'react-native';
+import { React } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default class MyApp extends Component {
-  render() {
-
-    let pic = {
-      uri:"https://th.bing.com/th/id/R.f1ffadca868d2ffeea273ddbec8218fb?rik=huwCtldznSoknA&riu=http%3a%2f%2fimg.izismile.com%2fimg%2fimg3%2f20100711%2f640%2fbrilliant_pictures_640_46.jpg&ehk=9qrZbKjX9Lv6imVaLrGakhBJswnoZRdK792fLNlJAMQ%3d&risl=&pid=ImgRaw&r=0"
-    }
+export default function App() {
   return (
-    <View style={{
-      padding: 60
-    }}>
-      
-      <Text>Hello, I am here!</Text>
+    <View style={styles.container}>
+      <Text style={styles.yellow}>CIS 340 Student!</Text>
+      <Text style={styles.largGreen}>Go RAMS!</Text>
+      <Text style={[styles.yellow, styles.largGreen]}>Yellow text, then big green text</Text>
     </View>
   );
 }
-}
+
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 60
+  },
+
+  largGreen: {
+    color: 'green',
+    fontWeight: 'bold',
+    fontSize: 24
+  },
+
+  yellow: {
+    color: 'yellow',
+    fontSize: 48
+  }
+});

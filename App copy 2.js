@@ -1,26 +1,28 @@
-import React, {Component, useState} from 'react';
-import { Text, ScrollView, Image } from 'react-native';
+import { React } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function WordConverter() {
-
-  const [text, setText] = useState('');
-
+export default function App() {
   return (
-    <View style={{
-      padding: 40
-    }}>
-      <TextInput
-      style={{height: 40}}
-      placeholder="Input your text here"
-      onChangeText={text => setText(text)}
-      defaultValue={text}
-      />
-
-      <Text style={{padding: 10, fontSize: 42}}>
-        {text.split(' ').map((word) => word).join(' ')}
-      </Text>
-      
+    <View>
+      <View style={[styles.container, {width: 40, height: 40, backgroundColor: 'red'}]}></View>
+      <View style={[styles.flexible, {width: 40, height: 40, backgroundColor: 'blue'}]}></View>
+      <View style={{width: 40, height: 40, backgroundColor: 'green'}}></View>
+      <View style={{width: 40, height: 40, backgroundColor: 'yellow'}}></View>
     </View>
-  )
 
-};
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    paddingLeft: 100,
+    paddingTop: 50,
+    zIndex: 0
+  },
+
+  flexible: {
+    flex: 1,
+    position: 'absolute',
+    zIndex: 1
+  }
+});

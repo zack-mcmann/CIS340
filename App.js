@@ -1,28 +1,13 @@
-import React from 'react';
-import { Text, SectionList, View } from 'react-native';
+import { React } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default StatesApp = () => {
+export default function App() {
+  return (
+    <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'baseline'}}>
+      <View style={{height: 50, backgroundColor: 'red', alignSelf: 'stretch'}}></View>
+      <View style={{width: 50, height: 50, backgroundColor: 'blue'}}></View>
+      <View style={{width: 50, height: 50, backgroundColor: 'green'}}></View>
+    </View>
 
-    return (
-      <View style={{flex: 1, paddingTop: 22}}>
-        <SectionList
-        sections={[
-          {title: 'A', data: ['Alabama', 'Alaska', 'Arizona']},
-          {title: 'C', data: ['California', 'Colorado', 'Connecticut']}
-        ]}
-        renderItem={({item}) => <Text style={{padding: 10, fontSize: 20, height: 44}}>{item}</Text>}
-        renderSectionHeader={({section}) => 
-          <Text style={{
-            paddingTop: 40, 
-            paddingLeft: 40,
-            fontSize: 14,
-            fontWeight: 'bold'
-          }}>
-            {section.title}
-          </Text>}
-          keyExtractor={(item,index) => index}
-        /> // You can continue with more sections
-      </View>
-    );
-
-  }
+  );
+}
